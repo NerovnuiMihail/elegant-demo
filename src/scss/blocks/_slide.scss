@@ -1,0 +1,126 @@
+.slide {
+    height: 459px;
+
+    display: grid;
+    grid-template-columns: 262px;
+    grid-template-rows: 349px 16px 52px 22px;
+    gap: 8px;
+
+    &__wrapper {
+        position: relative;
+        padding: 16px;
+        background-color: var(--neutral-02-100);
+        overflow: hidden;
+    }
+
+    &__tag {
+        position: relative;
+        z-index: 2;
+        width: 67px;
+        height: 24px;
+        border-radius: 4px;
+        padding: 4px 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+
+    &__heart {
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+        box-shadow: 0 8px 16px -8px rgba(15, 15, 15, 0.12);
+        background: #fff;
+        border-radius: 50%;
+
+        transition: all .3s;
+
+        position: absolute;
+        z-index: 2;
+        top: -106px;
+        right: 16px;
+
+        &::after {
+            content: url(../img/icons/heart.svg);
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        &:hover {
+            background-color: var(--yellow);
+        }
+    }
+
+    &__img {
+        position: relative;
+        z-index: 1;
+        top: -16px;
+        scale: 1.1;
+    }
+
+    &__btn {
+        position: absolute;
+        z-index: 2;
+        bottom: -106px;
+        left: 16px;
+
+        transition: all .3s;
+
+        width: 230px;
+        height: 46px;
+        padding: 8px 24px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.04);
+    }
+
+    &__stars {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        li {
+            cursor: pointer;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.625;
+        color: var(--neutral-07-100);
+    }
+
+    &__price {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.57143;
+    }
+}
+
+.slide:hover .slide__heart{
+    top: 16px;
+}
+.slide:hover .slide__btn{
+    bottom: 16px;
+}
+
+@include mobile-a {
+    .slide {
+        grid-template-columns: 230px;
+        grid-template-rows: 309px 16px 52px 22px;
+
+        &__img {
+            scale: 1.15;
+        }
+    }
+}

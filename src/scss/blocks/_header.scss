@@ -1,0 +1,180 @@
+.header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 171, 0, 0.64);
+	
+	&__wrapper {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1120px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 1;
+        color: var(--brand-color);
+    }
+
+    &__nav {
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+
+            li {
+                font-family: var(--third-family);
+                color: var(--neutral-07-100);
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 1.71429;
+
+                a {
+                    color: inherit;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 1.71429;
+                }
+            }
+        }
+    }
+
+    &__select {
+        cursor: pointer;
+        padding-right: 16px;
+        position: relative;
+
+        color: inherit;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.71429;
+
+        &::after {
+            content: url(../img/icons/arrow-down.svg);
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-60%);
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 19px;
+        
+        li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            label {
+                display: inline-block;
+                width: 23px;
+                height: 23px;
+
+                background-image: url(../img/icons/search.svg);
+                background-repeat: no-repeat;
+                background-position: right;
+                background-size: contain;
+
+                position: relative;
+
+                input {
+                    width: 20px;
+                    height: 20px;
+
+                    &:focus {
+                        position: absolute;
+                        padding-left: 10px;
+                        height: 30px;
+                        right: 0px;
+                        top: -4px;
+                        width: 240px;
+                        background-color: #fff;
+                    }
+                }
+            }
+            a {
+                display: inline-block;
+                width: 23px;
+                height: 23px;
+
+                background-image: url(../img/icons/user.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+
+            button {
+                width: 23px;
+                height: 23px;
+
+                background-image: url(../img/icons/shopping-bag.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+
+            span {
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: var(--neutral-07-100);
+
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 0.83333;
+                color: var(--yellow);
+            }
+        }
+    }
+}
+
+
+@include tablet {
+    .header__wrapper {
+        padding: 0 15px;
+    }
+
+    .header__logo {
+        .burger-btn {
+            display: flex;
+        }
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header__actions {
+        li {
+            display: none;
+
+            &:last-child {
+                display: flex;
+            }
+        }
+    }
+}
+
+@include mobile-a {
+    .header__logo {
+        gap: 0px;
+    }
+}

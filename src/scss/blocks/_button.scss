@@ -1,0 +1,10 @@
+.button {
+    text-align: center;
+    color: #fff;
+    background-color: var(--neutral-07-100);
+    border-radius: 8px;
+
+    &:hover {
+        color: var(--yellow);
+    }
+}
